@@ -62,7 +62,7 @@ app.get('/api/v1/cars/:id?', async (req, res) => {
   // Server-side validation (express-validator)
 
   try {
-    const cars = await Car.find(query);
+    const cars = await Car.findById(req.params.id);
     return res.status(200).json(cars);
   } catch (err) {
     console.error(err);
