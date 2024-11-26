@@ -56,7 +56,7 @@ const Car = mongoose.model('Car', carSchema);
 app.get('/api/v1/cars/:id?', async (req, res) => {
   let query = {};
   if (req.params.id) {
-    query._id = mongoose.Types.ObjectId(req.params.id);
+    query._id = req.params.id;
   }
 
   // Server-side validation (express-validator)
